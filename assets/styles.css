@@ -1,0 +1,75 @@
+.container {
+  /* height: 100%; */
+  font-family: "Roboto", sans-serif;
+  /* background: #2c3e50; */
+ 
+  /* background: -webkit-linear-gradient(to right, #3498db, #2c3e50);
+  background: linear-gradient(to right, #3498db, #2c3e50); */
+
+}
+body{
+  height: 100vh;  
+  background-image: url("pizza-cover.jpg");
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
+  /* background-size: auto; */
+}
+
+html{
+  height: 100vh;  
+}
+span.addToCart{
+  margin-right: 20px;
+  height: 40px;
+  text-align: center;
+  color: white;
+  display: inline-block;
+
+}
+span.removeFromCart{
+  margin-right: 20px;
+  height: 40px;
+  text-align: center;
+  color: white;
+  display: inline-block;
+
+}
+/* .addToCartDiv:hover span{
+  width: 40px;
+  opacity: 1.0;
+} */
+.addToCartDiv,.removeFromCartDiv{
+  width: 0;
+  transition: 0.3s linear;
+  opacity: 0;
+}
+
+
+.cardData:hover ~ .addToCartDiv{
+  
+    background-color: #0d6bc4;
+    opacity: 1.0;
+}
+.cardData:hover ~ .removeFromCartDiv{
+  
+    background-color: #ff0000;
+    opacity: 1.0;
+}
+.addToCartDiv:hover{
+  
+    background-color: #0d6bc4;
+    opacity: 1.0;
+}
+.removeFromCartDiv:hover{
+  
+    background-color: #ff0932;
+    opacity: 1.0;
+}
+/* .totalCart{
+  color: #0d6bc4;
+} */
+
+#droppable{
+  min-height: 100px;
+}

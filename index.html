@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+      integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script> -->
+    <title>Some Resturant</title>
+  </head>
+  <body>
+    <ul class="nav justify-content-center bg-Info" style="background-color: #e3f2fd">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li id="cart" class="nav-item align-items-center align-items-center">
+        <span class="mt-1 h-75 badge badge-success" style="background-color: #43c45f"> <i class="mt-2 fa-solid fa-cart-plus fa-xl totalCart"></i> <span id="totals">500</span> EG</span>
+      </li>
+    </ul>
+    <br />
+
+    <div class="container overflow-hidden">
+      <div class="row gy-5">
+        <div class="col-6 text-center fs-4 fs-4 text-body">items</div>
+        <div class="col-6 text-center fs-4 fs-4">orders</div>
+      </div>
+    </div>
+    <div class="container overflow-hidden">
+      <div class="row gy-5">
+        <div class="col-6">
+          <ul class="list-group list-group-flushed p-2 offset-2 col-md-8" style="background-color: #e3f2fd" id="itemsList">
+            <li class="list-group-item text-center" id="spinnderLi">
+              <div class="spinner-border text-info" style="width: 5rem; height: 5rem" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </li>
+            <li class="list-group-item text-center d-none" id="errorLi">
+              <div class="alert alert-danger" role="alert">some thing went wrong pls try again later</div>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <ul class="list-group list-group-flushed p-2 offset-2 col-md-8" id="droppable" style="background-color: #e3f2fd">
+            <li class="list-group-item text-center" id="holder">
+              <p class="card-text placeholder-glow">
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-6"></span>
+                <span class="placeholder col-4"></span>
+                <span class="placeholder col-6"></span>
+              </p>
+            </li>
+            <li class="card list-group-item h-50 position-sticky p-1">
+              <div class="position-sticky">
+                <span class="offset-2 badge alert-success">price: <span id="prices">0</span> EG</span><br>
+                <span class="offset-2 badge bg-warning alert-warning">Taxes: <span id="taxes">0</span> EG</span><br>
+                <span class="offset-2 badge bg-primary">Delivery: <span id="deliver">10</span> EG</span><br>
+                <span class="offset-2 col-9 badge bg-dark">Total: <span id="totls">0</span> EG</span>
+                <small class="offset-3 col-8  alert-danger text-center px-2 d-none" id="discount" role="alert">you received a 30% discount </small>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/scripts.js"></script>
+    <!-- <script src="assets/scripts.js"></script> -->
+  </body>
+</html>
