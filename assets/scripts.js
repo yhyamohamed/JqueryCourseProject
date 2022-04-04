@@ -77,22 +77,33 @@ function calculateQuantity(price, qty) {
   updateTotals(price* (qty-(qty-1)))
 }
 function updateTotals(amount) {
-  total += amount;
-  let tax = +calculateTax(total)
+  total += +amount;
+  console.log(+amount)
+  if(total >  0){
+    let tax = +calculateTax(total)
   
-  $('#prices').text(total)
-  $('#taxes').text(tax)
-  let delivery = +$('#deliver').text()
-  let coast =  tax+total+delivery;
- coast = (coast > 300)?applyDiscount(coast):coast;
-  $('#totls').text(coast)
-  $("#totals").text(coast);
+    $('#prices').text(total)
+    $('#taxes').text(tax)
+    let delivery = +$('#deliver').text()
+    let coast =  tax+total+delivery;
+   coast = (coast > 300)?applyDiscount(coast):coast;
+    $('#totls').text(coast)
+    $("#totals").text(coast);
+  }else{
+    $('#discount').addClass('d-none');
+    $('#prices').text(0)
+    $('#taxes').text(0)
+    $('#totls').text(0)
+    $("#totals").text(0);
+  }
+
 }
 function calculateTax(num) {
   return (num*0.14).toFixed(2)
 }
 function applyDiscount(amountDue){
   $('#discount').removeClass('d-none');
+  
   return (amountDue*0.30).toFixed(3)
 
 }
@@ -119,9 +130,10 @@ $("#droppable").on("click", ".removeFromCartDiv", (e) => {
   //get id
   let id = $(that).closest(".removeFromCartDiv").attr("id");
   //get price
-  let price = +$(that).parents().find(`#price_${id}`).text();
+  let price = +$(that).parents().find(`#price_${id}`).first().text();
   //return it
   let ele = $("#droppable").find(`#cardBody_${id}`).remove();
+ 
   updateTotals(-price);
 });
 
